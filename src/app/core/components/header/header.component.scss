@@ -1,0 +1,19 @@
+@import "partials/variables";
+
+.header {
+  background-color: $light-grey;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .nav-tool-items {
+    display: inline-block;
+    margin-right: 13px;
+
+    .hamburger {
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  }
+}
