@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
   opened = true;
   dynamicTheme = 'dark';
 
+  lat = 51.678418;
+  lng = 7.809007;
+
   ngOnInit() {
     console.log(window.innerWidth)
     if (window.innerWidth < 768) {
@@ -42,4 +45,18 @@ export class AppComponent implements OnInit {
       return false;
     }
   }
+
+  onChoseLocation(data: MapClickData) {
+    console.log(data);
+  }
+}
+
+interface MapClickData {
+  coords: LatLng;
+  placeId: any;
+}
+
+interface LatLng {
+  lat: number;
+  lng: number;
 }
