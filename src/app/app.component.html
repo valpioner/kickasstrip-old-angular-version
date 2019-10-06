@@ -1,6 +1,8 @@
 <div class="dark-theme">
   <div class="mat-app-background">
-    <mat-sidenav-container>
+    <router-outlet></router-outlet>
+
+    <!-- <mat-sidenav-container>
 
       <mat-sidenav class="sidenav"
         #sidenav
@@ -28,19 +30,10 @@
 
       <mat-sidenav-content class="content">
         <app-header (toggleSidebar)="sidenav.toggle()"></app-header>
-        <!-- <agm-map
-          [latitude]="lat"
-          [longitude]="lng"
-          (mapClick)="onChoseLocation($event)">
-          <agm-marker
-            [latitude]="lat"
-            [longitude]="lng">
-          </agm-marker>
-        </agm-map> -->
 
         <app-map style="width:100%;height:100%"></app-map>
       </mat-sidenav-content>
 
-    </mat-sidenav-container>
+    </mat-sidenav-container> -->
   </div>
 </div>

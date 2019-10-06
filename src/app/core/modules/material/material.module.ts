@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { MatBadgeModule } from '@angular/material/badge';
 import {
   MatButtonModule,
@@ -62,7 +63,7 @@ const material = [
 ];
 
 @NgModule({
-  imports: [ material ],
+  imports: [ material, HttpClientModule ],
   exports: [ material ]
 })
 export class MaterialModule { }

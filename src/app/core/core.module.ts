@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './modules/material/material.module';
 
-import { AuthModule } from './auth/auth.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,15 +14,12 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
   imports: [
     CommonModule,
     MaterialModule,
-    AuthModule,
-    MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
-    MaterialModule,
-    AuthModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule

@@ -205,7 +205,7 @@ export class MapComponent implements OnInit {
     for (const flightDetails of flights) {
       flightDetails.reduce((from, to) => {
         const path = [];
-        path.push(new g.LatLng(from.lat, from.long), new g.LatLng(to.lat, to.long));
+        path.push(new g.LatLng(from.lat, from.lng), new g.LatLng(to.lat, to.lng));
         const polyline = new g.Polyline(this.polyFlightsOptions);
         polyline.setPath(path);
         polyline.setMap(this.map);

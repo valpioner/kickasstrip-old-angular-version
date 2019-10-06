@@ -3,5 +3,26 @@
     <span class="nav-tool-items">
       <mat-icon (click)="toggleSidebar.emit()" class="hamburger">menu</mat-icon>
     </span>
+
+    <span class="nav-tool-items">
+      <button mat-icon-button [matMenuTriggerFor]="langMenu">
+        <mat-icon svgIcon="flag-en"></mat-icon>
+      </button>
+      <mat-menu #langMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+        <!-- <button mat-flat-button>+ Add new trip</button> -->
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <!-- <button mat-flat-button>+ Add new trip</button> -->
+      <button mat-stroked-button>Sign In</button>
+    </span>
+
   </mat-toolbar>
 </div>

@@ -1,56 +1,56 @@
 export const mockFlights = [
   [
-    { lat: 50.448853, long: 30.513346, name: 'Kyiv' },
-    { lat: 52.3547322, long: 4.8285837, name: 'Amsterdam' },
-    { lat: 40.785091, long: -73.968285, name: 'New York' }
+    { lat: 50.448853, lng: 30.513346, name: 'Kyiv' },
+    { lat: 52.3547322, lng: 4.8285837, name: 'Amsterdam' },
+    { lat: 40.785091, lng: -73.968285, name: 'New York' }
   ],
   [
-    { lat: 50.448853, long: 30.513346, name: 'Kyiv' },
-    { lat: 52.3547322, long: 4.8285837, name: 'Amsterdam' },
-    { lat: 40.785091, long: -73.968285, name: 'New York' },
-    { lat: 44.970697, long: -93.2614785, name: 'Minneapolis' },
-    { lat: 61.217381, long: -149.863129, name: 'Anchorage' }
+    { lat: 50.448853, lng: 30.513346, name: 'Kyiv' },
+    { lat: 52.3547322, lng: 4.8285837, name: 'Amsterdam' },
+    { lat: 40.785091, lng: -73.968285, name: 'New York' },
+    { lat: 44.970697, lng: -93.2614785, name: 'Minneapolis' },
+    { lat: 61.217381, lng: -149.863129, name: 'Anchorage' }
   ],
   [
-    { lat: 61.217381, long: -149.863129, name: 'Anchorage' },
-    { lat: 37.774929, long: -122.41941, name: 'San Francisko' }
+    { lat: 61.217381, lng: -149.863129, name: 'Anchorage' },
+    { lat: 37.774929, lng: -122.41941, name: 'San Francisko' }
   ],
   [
-    { lat: 34.0204989, long: -118.4117325, name: 'Los Angeles' },
-    { lat: 40.785091, long: -73.968285, name: 'New York' },
-    { lat: 48.858093, long: 2.294694, name: 'Paris' },
-    { lat: 50.448853, long: 30.513346, name: 'Kyiv' }
+    { lat: 34.0204989, lng: -118.4117325, name: 'Los Angeles' },
+    { lat: 40.785091, lng: -73.968285, name: 'New York' },
+    { lat: 48.858093, lng: 2.294694, name: 'Paris' },
+    { lat: 50.448853, lng: 30.513346, name: 'Kyiv' }
   ],
   [
-    { lat: 50.06465, long: 19.944979, name: 'Krakow' },
-    { lat: 59.924484, long: 10.705147, name: 'Oslo' }
+    { lat: 50.06465, lng: 19.944979, name: 'Krakow' },
+    { lat: 59.924484, lng: 10.705147, name: 'Oslo' }
   ],
   [
-    { lat: 59.924484, long: 10.705147, name: 'Oslo' },
-    { lat: 45.444958, long: 12.328463, name: 'Venice' }
+    { lat: 59.924484, lng: 10.705147, name: 'Oslo' },
+    { lat: 45.444958, lng: 12.328463, name: 'Venice' }
   ],
   [
-    { lat: 10.762622, long: 106.660172, name: 'Ho Chi Minh' },
-    { lat: 13.736717, long: 100.523186, name: 'Bangkok' },
-    { lat: 41.015137, long: 28.97953, name: 'Istanbul' },
-    { lat: 50.448853, long: 30.513346, name: 'Kyiv' }
+    { lat: 10.762622, lng: 106.660172, name: 'Ho Chi Minh' },
+    { lat: 13.736717, lng: 100.523186, name: 'Bangkok' },
+    { lat: 41.015137, lng: 28.97953, name: 'Istanbul' },
+    { lat: 50.448853, lng: 30.513346, name: 'Kyiv' }
   ],
   [
-    { lat: 50.448853, long: 30.513346, name: 'Kyiv' },
-    { lat: 27.1927403, long: 33.6416265, name: 'Hurgada' }
+    { lat: 50.448853, lng: 30.513346, name: 'Kyiv' },
+    { lat: 27.1927403, lng: 33.6416265, name: 'Hurgada' }
   ],
   [
-    { lat: 50.448853, long: 30.513346, name: 'Kyiv' },
-    { lat: 34.9014389, long: 33.5852154, name: 'Larnaka' }
+    { lat: 50.448853, lng: 30.513346, name: 'Kyiv' },
+    { lat: 34.9014389, lng: 33.5852154, name: 'Larnaka' }
   ],
   [
-    { lat: 49.8327787, long: 23.9421962, name: 'Lviv' },
-    { lat: 36.8980543, long: 30.6480653, name: 'Antalia' }
+    { lat: 49.8327787, lng: 23.9421962, name: 'Lviv' },
+    { lat: 36.8980543, lng: 30.6480653, name: 'Antalia' }
   ],
   [
-    { lat: 50.448853, long: 30.513346, name: 'Kiev' },
-    { lat: 52.3547322, long: 4.8285837, name: 'Amsterdam' },
-    { lat: 63.269458, long: 10.739231, name: 'Trondheim' }
+    { lat: 50.448853, lng: 30.513346, name: 'Kiev' },
+    { lat: 52.3547322, lng: 4.8285837, name: 'Amsterdam' },
+    { lat: 63.269458, lng: 10.739231, name: 'Trondheim' }
   ]
 ];
 

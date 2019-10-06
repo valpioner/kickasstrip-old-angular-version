@@ -36,9 +36,9 @@ router.post('/login', (req, res) => {
       console.log(err);
     } else {
       if (!user) {
-        res.status(401).send('Invalid email');
+        res.status(401).send({ err: 'Invalid email' });
       } else if (user.password !== userData.password) {
-        res.status(401).send('Invalid password');
+        res.status(401).send({ err: 'Invalid password' });
       } else {
         res.status(200).send(user);
       }

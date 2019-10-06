@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EventsComponent } from './core/auth/components/events/events.component';
-import { RegisterComponent } from './core/auth/components/register/register.component';
-import { LoginComponent } from './core/auth/components/login/login.component';
-import { SpecialComponent } from './core/auth/components/special/special.component';
+import { RegisterComponent } from './modules/auth/components/register/register.component';
+import { LoginComponent } from './modules/auth/components/login/login.component';
 
 const routes: Routes = [
   {
@@ -12,21 +10,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'events',
-    component: EventsComponent
-  },
-  {
-    path: 'special',
-    component: SpecialComponent
-  },
-  {
     path: 'login',
     component: LoginComponent
+    // data: { title: 'Heroes List' }
   },
   {
     path: 'register',
     component: RegisterComponent
-  }
+  },
+  // { path: 'hero/:id',      component: HeroDetailComponent },
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
