@@ -8,7 +8,7 @@
     </mat-card-header>
 
     <mat-card-content>
-      <form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+      <form class="login-form" (ngSubmit)="login()" [formGroup]="form">
         <mat-form-field class="example-full-width">
           <input matInput
             placeholder="Email"
@@ -33,18 +33,19 @@
         </span>
         </mat-form-field>
 
-        <a routerLink='/forgot-password'>
-          Forgot password?
-        </a>
-        <a routerLink='/register'>
-          Register
-        </a>
-
         <!-- <mat-error>error</mat-error> -->
 
         <mat-card-actions>
           <button type="submit" mat-raised-button color="primary">SIGN IN</button>
         </mat-card-actions>
+
+        <!-- <a routerLink='/forgot-password'>
+          Forgot password?
+        </a> -->
+        <span>
+          Don't have an account yet?
+          <a routerLink='/register'>Sign Up</a>
+        </span>
       </form>
     </mat-card-content>
 

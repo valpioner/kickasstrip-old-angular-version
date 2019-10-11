@@ -6,7 +6,7 @@ import { LoginComponent } from './modules/auth/components/login/login.component'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   // { path: 'hero/:id',      component: HeroDetailComponent },
-  // { path: '**', component: PageNotFoundComponent }
+  // { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
