@@ -4,6 +4,8 @@ import { RegisterComponent } from './modules/auth/components/register/register.c
 import { LoginComponent } from './modules/auth/components/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './_helpers';
+import { AdminComponent } from './modules/admin/components/admin/admin.component';
+import { Role } from './_models/role';
 
 const routes: Routes = [
   {
@@ -14,9 +16,14 @@ const routes: Routes = [
     // pathMatch: 'full'
   },
   {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  {
     path: 'login',
     component: LoginComponent
-    // data: { title: 'Heroes List' }
   },
   {
     path: 'register',

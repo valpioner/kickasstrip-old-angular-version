@@ -13,6 +13,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { HomeComponent } from './home/home.component';
+import { AdminModule } from './modules/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     CoreModule,
     SharedModule,
     AuthModule,
+    AdminModule,
     HttpClientModule
   ],
   providers: [
