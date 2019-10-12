@@ -12,6 +12,7 @@ body {
 a {
   color: map-get($green-palette, 500);
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

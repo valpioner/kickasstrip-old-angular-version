@@ -14,13 +14,19 @@ export class LoginComponent implements OnInit {
   hidePass = true;
   loading = false;
   returnUrl: string;
+  error = '';
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
-  ) { }
+  ) {
+    // redirect to home if already logged in
+    if (this.authService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -28,25 +34,29 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/register';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   login() {
-    this.loading = true;
-    if (!this.form.invalid) {
-      this.authService.login(this.form.value)
-        .pipe(first())
-        .subscribe(
-          data => {
-            console.log('data: ', data);
-            this.router.navigateByUrl(this.returnUrl);
-          },
-          error => {
-            console.log('error: ', error);
-            // this.alertService.error(error);
-            this.loading = false;
-          });
+    if (this.form.invalid) {
+      return;
     }
+
+    this.loading = true;
+
+    this.authService.login(this.form.value.email, this.form.value.password)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log('data: ', data);
+          this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          console.log('error: ', error);
+          this.error = error;
+          // this.alertService.error(error);
+          this.loading = false;
+        });
   }
 
 }
