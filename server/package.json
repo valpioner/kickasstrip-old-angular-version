@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "server": "nodemon server"
   },
   "keywords": [],
   "author": "Valentyn Vasylevskyy",
