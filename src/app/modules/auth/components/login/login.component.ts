@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) {
     // redirect to home if already logged in
     if (this.authService.currentUserValue) {
@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
 
-    this.authService.login(this.form.value.email, this.form.value.password)
+    this.authService
+      .login(this.form.value.email, this.form.value.password)
       .pipe(first())
       .subscribe(
         data => {
@@ -56,7 +57,7 @@ export class LoginComponent implements OnInit {
           this.error = error;
           // this.alertService.error(error);
           this.loading = false;
-        });
+        }
+      );
   }
-
 }

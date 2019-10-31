@@ -1,19 +1,18 @@
-@import "partials/variables";
+@import 'partials/variables';
 
 .header {
-  background-color: $light-grey;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
+  position: absolute;
+  width: auto;
   z-index: 1;
+  right: 0;
 
-  .nav-tool-items {
-    display: inline-block;
-    margin-right: 13px;
+  .hamburger {
+    margin-top: 5px;
+    cursor: pointer;
+  }
 
-    .hamburger {
-      margin-top: 5px;
-      cursor: pointer;
-    }
+  mat-toolbar {
+    display: flex;
+    background-color: transparent;
   }
 }

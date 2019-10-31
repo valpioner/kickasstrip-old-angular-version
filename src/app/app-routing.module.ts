@@ -10,8 +10,8 @@ import { Role } from './_models/role';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
+    component: HomeComponent
+    // canActivate: [AuthGuard]
     // redirectTo: '/events',
     // pathMatch: 'full'
   },
@@ -29,19 +29,19 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-          //   { path: '', component: AppComponent, children: [
-          //     { path: '',
-          //       component: HomeComponent
-          //     },
-          //     { path: 'login',
-          //       component: LoginComponent,
-          //       canActivate: [GuestGuard]
-          //     },
-          //     {
-          //       path: 'protected',
-          //       component: ProtectedComponent, canActivate: [LoggedInGuard]
-          //     }
-          // ]}
+  //   { path: '', component: AppComponent, children: [
+  //     { path: '',
+  //       component: HomeComponent
+  //     },
+  //     { path: 'login',
+  //       component: LoginComponent,
+  //       canActivate: [GuestGuard]
+  //     },
+  //     {
+  //       path: 'protected',
+  //       component: ProtectedComponent, canActivate: [LoggedInGuard]
+  //     }
+  // ]}
   // { path: 'hero/:id',      component: HeroDetailComponent },
 
   // otherwise redirect to home
