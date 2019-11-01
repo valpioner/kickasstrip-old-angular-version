@@ -27,13 +27,13 @@ exports.register = asyncHandler(async (req, res, next) => {
 exports.login = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
-  // Validate emil & password
+  // Validate email & password
   if (!email || !password) {
     return next(new ErrorResponse('Please provide an email and password', 400));
   }
 
   // Check for user
-  const user = await User.findOne({ email }).select('+password');
+  let user = await User.findOne({ email }).select('+password');
 
   if (!user) {
     return next(new ErrorResponse('Invalid credentials', 401));
@@ -45,6 +45,7 @@ exports.login = asyncHandler(async (req, res, next) => {
   if (!isMatch) {
     return next(new ErrorResponse('Invalid credentials', 401));
   }
+  user.password = undefined;
 
   sendTokenResponse(user, 200, res);
 });
@@ -209,6 +210,7 @@ const sendTokenResponse = (user, statusCode, res) => {
     .cookie('token', token, options)
     .json({
       success: true,
+      user,
       token
     });
 };

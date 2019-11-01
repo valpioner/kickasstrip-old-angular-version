@@ -12,7 +12,9 @@ export class AuthService {
   public currentUser: Observable<User>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUserSubject = new BehaviorSubject<User>(
+      JSON.parse(localStorage.getItem('currentUser'))
+    );
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -25,24 +27,27 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${environment.apiUrl}/api/login`, { email, password })
-      .pipe(map(user => {
-        // login successful if there's a jwt token in the response
-        if (user && user.token) {
-          // store user details and jwt token credentials in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-        }
+    return this.http
+      .post<any>(`${environment.apiUrl}/auth/login`, { email, password })
+      .pipe(
+        map(user => {
+          // login successful if there's a jwt token in the response
+          if (user && user.token) {
+            // store user details and jwt token credentials in local storage to keep user logged in between page refreshes
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.currentUserSubject.next(user);
+          }
 
-        return user;
-      }));
-      // .pipe(
-      //   tap((res: any) => console.log('logIn response:', res)),
-      //   catchError((err) => {
-      //     console.log('err1', err);
-      //     return throwError('err2', err);
-      //   })
-      // );
+          return user;
+        })
+      );
+    // .pipe(
+    //   tap((res: any) => console.log('logIn response:', res)),
+    //   catchError((err) => {
+    //     console.log('err1', err);
+    //     return throwError('err2', err);
+    //   })
+    // );
   }
 
   logout() {

@@ -2,6 +2,7 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const gravatar = require('gravatar');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -16,6 +17,9 @@ const UserSchema = new mongoose.Schema({
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       'Please add a valid email'
     ]
+  },
+  avatar: {
+    type: String
   },
   role: {
     type: String,
@@ -44,6 +48,12 @@ UserSchema.pre('save', async function(next) {
 
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
+
+  this.avatar = gravatar.url(this.email, {
+    s: '200', // Size
+    r: 'pg', // Rating
+    d: 'mm' // Default
+  });
 });
 
 // Sign JWT and return

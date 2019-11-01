@@ -14,5 +14,11 @@
   mat-toolbar {
     display: flex;
     background-color: transparent;
+
+    .avatar {
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+    }
   }
 }
